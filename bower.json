@@ -1,0 +1,20 @@
+{
+  "name": "trucks",
+  "version": "0.1.0",
+  "homepage": "https://github.com/lindsbot/trucks",
+  "authors": [
+    "Lindsay Hertz <lindsay.hertz@gmail.com>"
+  ],
+  "description": "Find food trucks near you in SF!",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.0"
+  }
+}
