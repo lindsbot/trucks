@@ -5,8 +5,6 @@ var TruckView = Backbone.View.extend({
     this.collection.fetch();
   },
   render: function() {
-    // console.log('render function: ')
-    // console.log(this.collection.toJSON());
     _.each(this.collection.toJSON(), function(element){
       var lat = element.latitude;
       var lng = element.longitude;
