@@ -44,6 +44,15 @@
         geoLocate();
 
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        var trucks = new Trucks();
+        trucks.fetch({
+          success: function(data) {
+            console.log(data)
+          }
+        });
+
+
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
