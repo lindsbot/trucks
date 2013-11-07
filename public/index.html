@@ -15,25 +15,22 @@
     <div id="map-canvas"/>
     <p id="error"></p>
 
-    <script type="text/javascript">
-      function initialize() {      
-        var mapView = new MapView();
-        var truckView = new TruckView();
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
-
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
 
-    <script src="js/app.js"></script>
     <script src="js/models/truck.js"></script>
     <script src="js/models/map.js"></script>
     <script src="js/collections/trucks.js"></script>
     <script src="js/views/trucks.js"></script>
     <script src="js/views/map.js"></script>
+    <script src="js/views/appView.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+        var app = new AppView();
+    </script>
 
   </body>
 </html>

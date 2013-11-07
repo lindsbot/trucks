@@ -14,10 +14,7 @@ var TrucksView = Backbone.View.extend({
         position: latLng,
         title: "hi mom!"
       });
-
-    })
-    console.log(this)
-
+    });
   }
 
 });
