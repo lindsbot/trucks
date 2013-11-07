@@ -6,9 +6,6 @@ describe('trucks server', function(){
     return true;
   });
 
-
-
-
 });
 
 
