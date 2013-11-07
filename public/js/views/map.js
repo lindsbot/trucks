@@ -31,7 +31,7 @@ var MapView = Backbone.View.extend({
 
         geoLocate();
 
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        window.map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   }
 
 });
