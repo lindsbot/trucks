@@ -6,16 +6,16 @@ var MapView = Backbone.View.extend({
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    function geolocationSuccess(position) {
+    var geolocationSuccess = function(position) {
       var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       mapOptions.center = latLng;
     }
 
-    function geolocationError(positionError) {
+    var geolocationError = function(positionError) {
       document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
     }
 
-    function geoLocate() {
+    var geoLocate = function() {
       if (navigator.geolocation) {
         var positionOptions = {
         enableHighAccuracy: true,

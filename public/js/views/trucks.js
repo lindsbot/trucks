@@ -1,4 +1,4 @@
-var TruckView = Backbone.View.extend({
+var TrucksView = Backbone.View.extend({
   initialize: function() {
     this.collection = new Trucks()
     this.collection.on('sync', this.render, this);
@@ -14,7 +14,9 @@ var TruckView = Backbone.View.extend({
         position: latLng,
         title: "hi mom!"
       });
+
     })
+    console.log(this)
 
   }
 
