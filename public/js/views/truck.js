@@ -1,6 +1,6 @@
 var TruckView = Backbone.View.extend({
   initialize: function() {
-    this.collection = new Trucks({model: TruckModel})
+    this.collection = new Trucks()
     this.collection.on('sync', this.render, this);
     this.collection.fetch();
 
