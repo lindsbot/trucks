@@ -45,12 +45,14 @@
 
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-        var trucks = new Trucks();
-        trucks.fetch({
-          success: function(data) {
-            console.log(data)
-          }
-        });
+        // var trucks = new Trucks();
+        // trucks.fetch({
+        //   success: function(data) {
+        //     console.log(data)
+        //   }
+        // });
+      
+      var truckView = new TruckView();
 
 
       }
@@ -62,7 +64,9 @@
 
     <script src="js/app.js"></script>
     <script src="js/views/map.js"></script>
+    <script src="js/views/truck.js"></script>
     <script src="js/models/truck.js"></script>
+    <script src="js/models/map.js"></script>
     <script src="js/collections/trucks.js"></script>
   </head>
   <body>
