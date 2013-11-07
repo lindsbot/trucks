@@ -14,6 +14,7 @@ var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'public/views'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -28,7 +29,7 @@ if (app.get('env') === 'development') {
   app.use(express.errorHandler());
 }
 
-app.get('*', function(req, res){
+app.get('/', function(req, res){
   res.send('index.html');
 });
 
