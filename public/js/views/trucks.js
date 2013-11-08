@@ -12,18 +12,15 @@ var TrucksView = Backbone.View.extend({
       var lat = truck.get('latitude');
       var lng = truck.get('longitude');
       var latLng = new google.maps.LatLng(lat,lng);
-      console.log(latLng)
+      var name = truck.get('applicant');
       if (bounds.contains(latLng)) {
-        console.log("here ")
         var marker = new google.maps.Marker({
           map: map,
           position: latLng,
-          title: "hi mom!"
+          title: name
         });
       }
     });
-
   }
-
-
 });
+
