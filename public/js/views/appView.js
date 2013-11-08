@@ -4,7 +4,7 @@ var AppView = Backbone.View.extend({
     this.mapView.render();
     this.trucksView = new TrucksView({collection: this.model.filteredTrucks});
     this.trucksView.render();
-    this.listView = new ListView();
+    this.listView = new ListView({collection: this.model.filteredTrucks});
     this.listView.render();
 
     google.maps.event.addListener(map, 'bounds_changed', _.debounce(
@@ -13,7 +13,7 @@ var AppView = Backbone.View.extend({
           this.model.allTrucks.fetch({
             success: _.bind(this.resetCollection, this)
           });
-        }, this)), 250), 250);
+        }, this)), 250), 250, true);
   },
 
   resetCollection: function() {
@@ -27,6 +27,7 @@ var AppView = Backbone.View.extend({
     });
     this.trucksView.collection.reset(updatedTrucks);
     console.log(this.trucksView.collection)
+    this.listView.render();
   }
 });
 

@@ -9,9 +9,14 @@ a {
   height: 550px;
   width: 300px;
   position: fixed;
-  top: 50px;
+  top: 30px;
   left: 80px;
   background-color: black;
   opacity: .35;
   z-index: 1000;
+  overflow: scroll;
+}
+
+.listItemView {
+  display: inline-block;
 }
