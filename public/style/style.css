@@ -5,17 +5,12 @@ a {
   color: #00b7ff;
 }
 
-#map-container {
-/*  position: relative;
-  margin: 50px;*/
-}
-
 .truckList {
-  height: 300px;
-  width: 200px;
+  height: 500px;
+  width: 300px;
   position: fixed;
   top: 50px;
-  left: 50px;
+  left: 80px;
   background-color: gray;
   opacity: .75;
   z-index: 1000;

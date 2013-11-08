@@ -17,7 +17,8 @@ var MapView = Backbone.View.extend({
       // browser doesn't support geolocation
       document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
     }
-    window.map = new google.maps.Map(document.getElementById("map-canvas"), this.mapOptions);    
+    window.map = new google.maps.Map(document.getElementById("map-canvas"), this.mapOptions);  
+    var Geomarker = new GeolocationMarker(map);  
   },
   geolocationSuccess: function(position) {
     console.log("geolocation success")
