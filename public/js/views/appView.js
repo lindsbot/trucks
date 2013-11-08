@@ -7,13 +7,13 @@ var AppView = Backbone.View.extend({
     this.listView = new ListView();
     this.listView.render();
 
-    google.maps.event.addListener(map, 'bounds_changed', _.throttle(
-      _.debounce(
+    google.maps.event.addListener(map, 'bounds_changed', _.debounce(
+      _.throttle(
         _.bind(function(){
           this.model.allTrucks.fetch({
             success: _.bind(this.resetCollection, this)
           });
-        }, this)), 500, true), 500);
+        }, this)), 250), 250);
   },
 
   resetCollection: function() {

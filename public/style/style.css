@@ -6,12 +6,12 @@ a {
 }
 
 .truckList {
-  height: 500px;
+  height: 550px;
   width: 300px;
   position: fixed;
   top: 50px;
   left: 80px;
-  background-color: gray;
-  opacity: .75;
+  background-color: black;
+  opacity: .35;
   z-index: 1000;
 }
