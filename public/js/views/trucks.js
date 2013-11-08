@@ -4,16 +4,12 @@ var TrucksView = Backbone.View.extend({
     this.collection.on('sync', this.render, this);
     this.collection.fetch();
 
-    var bind = function(object, method) {
-      return function() {
-        return method.apply(object, arguments);
-      };
-    };
-
-    google.maps.event.addListener(map, 'bounds_changed', bind(this, this.collection.resetCollection));
-    this.listenTo(this.collection, 'sync', console.log("collection sync"));
+    console.log(this.collection)
+    //google.maps.event.addListener(map, 'bounds_changed', console.log("bounds_changed"));
+    this.listenTo(this.collection, 'sync', console.log("collection sync - in TrucksView"));
   },
   render: function() {
+    console.log("rendering")
     var bounds = map.getBounds();
     _.each(this.collection.models, function(truck){
       var lat = truck.get('latitude');
@@ -31,3 +27,4 @@ var TrucksView = Backbone.View.extend({
   }
 });
 
+    //google.maps.event.addListener(map, 'bounds_changed', ???);
