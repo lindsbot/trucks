@@ -1,5 +1,4 @@
 var MapView = Backbone.View.extend({
-  // model: Map,
   initialize: function(){
     this.mapOptions = {
       center: new google.maps.LatLng(37.7577, -122.4376),
@@ -22,22 +21,14 @@ var MapView = Backbone.View.extend({
 
     window.map = new google.maps.Map(document.getElementById("map-canvas"), this.mapOptions);
     
-    var bind = function(object, method) {
-      return function() {
-        return method.apply(object, arguments);
-      };
-    };
-
-    google.maps.event.addListener(map, 'bounds_changed', bind(this, this.collection.render));
-    this.listenTo(this.collection, 'sync', bind(this, this.collection.render));
   },
   geolocationSuccess: function(position) {
+    console.log("geolocation success")
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     this.mapOptions.center = latLng;
-
-    this.collection.render();
   },
   geolocationError: function(positionError) {
+    console.log("geolocation error")
     document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
   }
 });

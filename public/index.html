@@ -20,17 +20,18 @@
     <script src="bower_components/backbone/backbone.js"></script>
 
     <script src="js/models/truck.js"></script>
-    <script src="js/models/map.js"></script>
     <script src="js/collections/trucks.js"></script>
     <script src="js/views/trucks.js"></script>
+    <script src="js/models/map.js"></script>
     <script src="js/views/map.js"></script>
-    <script src="js/views/appView.js"></script>
 
+    <script src="js/views/appView.js"></script>
     <script src="js/app.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function(){
-        var app = new AppView();      
+        var app = new App();
+        var appView = new AppView({ model: app })      
       });
     </script>
 
