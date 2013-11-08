@@ -5,7 +5,6 @@ var MapView = Backbone.View.extend({
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    
   },
   render: function(){
     if (navigator.geolocation) {
@@ -18,7 +17,6 @@ var MapView = Backbone.View.extend({
       // browser doesn't support geolocation
       document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
     }
-
     window.map = new google.maps.Map(document.getElementById("map-canvas"), this.mapOptions);    
   },
   geolocationSuccess: function(position) {
