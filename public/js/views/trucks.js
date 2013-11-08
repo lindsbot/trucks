@@ -1,9 +1,11 @@
 var TrucksView = Backbone.View.extend({
   initialize: function() {
+    var self = this;
     this.collection.on('sync', this.render, this);
     this.collection.fetch();
   },
   render: function() {
+    var self = this;
     console.log("rendering...", this.collection)
     var bounds = map.getBounds();
     _.each(this.collection.models, function(truck){
@@ -20,5 +22,3 @@ var TrucksView = Backbone.View.extend({
   }
 
 });
-
-    //google.maps.event.addListener(map, 'bounds_changed', ???);

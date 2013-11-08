@@ -7,6 +7,7 @@
       body { height: 100%; margin: 0; padding: 0 }
       #map-canvas { height: 100% }
     </style>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzVfiFQpDJmfJE6exj3uhDGU-f2azXTgg&sensor=true">
     </script>
@@ -15,22 +16,26 @@
     <div id="map-canvas"/>
     <p id="error"></p>
 
+
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/Backbone.localStorage/backbone.localStorage.js"></script>
 
     <script src="js/models/truck.js"></script>
     <script src="js/collections/trucks.js"></script>
+    <script src="js/views/ListView.js"></script>
     <script src="js/views/trucks.js"></script>
     <script src="js/models/map.js"></script>
     <script src="js/views/map.js"></script>
 
-    <script src="js/views/appView.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/views/appView.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function(){
-        var appView = new AppView({ model: new App() }).render();      
+        var app = new App();
+        var appView = new AppView({model: app}).render();      
       });
     </script>
 

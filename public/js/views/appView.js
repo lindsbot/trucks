@@ -1,10 +1,22 @@
 var AppView = Backbone.View.extend({
   initialize: function() {
+    var self = this;
     this.mapView = new MapView({model: new Map()});
     this.mapView.render();
-    this.trucksView = new TrucksView({collection: this.model.filteredTrucks});
+    this.trucksView = new TrucksView({collection: self.model.filteredTrucks});
+    this.trucksView.render();
+    this.listView = new ListView();
+    this.listView.render();
 
-    google.maps.event.addListener(map, 'bounds_changed', _.bind(function(event){
+
+
+    self.model.allTrucks.fetch().done(function(){
+      console.log('hereeeeee')
+      console.log(self.model.allTrucks)
+      //debugger;
+    });
+
+    google.maps.event.addListener(map, 'bounds_changed', _.bind(function(){
       this.model.allTrucks.fetch({
         success: _.bind(this.resetCollection, this)
       });
