@@ -1,20 +1,29 @@
 var TrucksView = Backbone.View.extend({
+  model: TruckModel,
   initialize: function() {
-    this.collection = new Trucks()
+    this.collection = new Trucks();
     this.collection.on('sync', this.render, this);
     this.collection.fetch();
   },
   render: function() {
-    _.each(this.collection.toJSON(), function(element){
-      var lat = element.latitude;
-      var lng = element.longitude;
-      var latLng = new google.maps.LatLng(lat, lng)
-      var marker = new google.maps.Marker({
-        map: map,
-        position: latLng,
-        title: "hi mom!"
-      });
+    var bounds = map.getBounds();
+    console.log(bounds);
+    _.each(this.collection.models, function(truck){
+      var lat = truck.get('latitude');
+      var lng = truck.get('longitude');
+      var latLng = new google.maps.LatLng(lat,lng);
+      console.log(latLng)
+      if (bounds.contains(latLng)) {
+        console.log("here ")
+        var marker = new google.maps.Marker({
+          map: map,
+          position: latLng,
+          title: "hi mom!"
+        });
+      }
     });
+
   }
+
 
 });
