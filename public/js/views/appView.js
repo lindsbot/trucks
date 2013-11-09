@@ -2,8 +2,10 @@ var AppView = Backbone.View.extend({
   initialize: function() {
     this.mapView = new MapView({model: new Map()});
     this.mapView.render();
+
     this.trucksView = new TrucksView({collection: this.model.filteredTrucks});
     this.trucksView.render();
+
     this.listView = new ListView({collection: this.model.filteredTrucks});
     this.listView.render();
 
@@ -25,6 +27,7 @@ var AppView = Backbone.View.extend({
       var latLng = new google.maps.LatLng(lat,lng);
       if (bounds.contains(latLng)) { return true; }
     });
+    
     this.trucksView.collection.reset(updatedTrucks);
     this.listView.render();
   }
