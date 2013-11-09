@@ -4,7 +4,7 @@ var ListView = Backbone.View.extend({
     this.$el.empty();
 
     $('#list-container').remove();
-    
+
     this.$el.append(
         this.collection.map(function(truck){
           return new ListItemView({model: truck}).render();
@@ -14,7 +14,7 @@ var ListView = Backbone.View.extend({
     var container = $("<div id='list-container'></div>");
     $('#map-canvas').append(container);
 
-    var title = $("<h2 class='listTitle'></h2>");
+    var title = $("<h3 class='listTitle'></h3>");
     title.append("Food Trucks Near You");
     container.append(title);
     container.append(this.$el);
