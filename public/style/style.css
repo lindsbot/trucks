@@ -1,8 +1,18 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 11px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
   color: #00b7ff;
+}
+
+ul, ol {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+li {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .truckList {
@@ -12,11 +22,26 @@ a {
   top: 30px;
   left: 80px;
   background-color: black;
-  opacity: .35;
+  opacity: .55;
   z-index: 1000;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .listItemView {
-  display: inline-block;
+  height: 80px;
+  opacity: 1;
+  color: white;
 }
+
+.listItemView li:nth-child(1) {
+  font-size: 1.2em;
+}
+
+.listItemView li:first-child {
+  padding-top: 10px;
+}
+
+.listItemView li:last-child {
+  padding-bottom: 10px;
+}
+
