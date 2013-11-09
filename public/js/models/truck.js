@@ -1,9 +1,8 @@
 var TruckModel = Backbone.Model.extend({
-  initialize: function() {
-
-  },
   defaults: function() {
-    return {};
+    return {
+      address: "Address Not Available"
+    };
   }
 }); 
 

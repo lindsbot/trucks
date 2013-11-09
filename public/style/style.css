@@ -25,18 +25,23 @@ li {
   top: 30px;
   left: 80px;
   background-color: black;
-  opacity: .6;
+  opacity: .85;
   z-index: 1000;
   overflow-y: scroll;
   padding: 10px;
   border-radius: 7px;
+}
+.listTitle {
+  color: white;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .listItemView {
   padding: 5px;
   border-radius: 3px;
   min-height: 80px;
-  background-color: #333;
+  background-color: #212121;
   color: white;
   margin-bottom: 5px;
 }
@@ -46,7 +51,7 @@ li {
 }
 
 .selected {
-  background-color: gray;
+  background-color: #3D3D3D;
 }
 
 
