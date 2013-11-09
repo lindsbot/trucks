@@ -8,6 +8,7 @@ a {
 ul, ol {
   list-style-type: none;
   padding-left: 10px;
+  border-radius: 8px;
 }
 
 li {
@@ -21,14 +22,18 @@ li {
   position: fixed;
   top: 30px;
   left: 80px;
-  background-color: black;
-  opacity: .55;
+  background-color: #333;
+  opacity: .85;
   z-index: 1000;
   overflow-y: scroll;
 }
 
+#list-container {
+  padding: 10px;
+}
+
 .listItemView {
-  height: 80px;
+  min-height: 80px;
   opacity: 1;
   color: white;
 }
@@ -44,4 +49,10 @@ li {
 .listItemView li:last-child {
   padding-bottom: 10px;
 }
+
+.selected {
+  background-color: gray;
+}
+
+
 
