@@ -7,13 +7,14 @@ var AppView = Backbone.View.extend({
     this.listView = new ListView({collection: this.model.filteredTrucks});
     this.listView.render();
 
-    google.maps.event.addListener(map, 'bounds_changed', _.debounce(
-      _.throttle(
-        _.bind(function(){
-          this.model.allTrucks.fetch({
-            success: _.bind(this.resetCollection, this)
-          });
-        }, this)), 250), 250, true);
+    google.maps.event.addListener(map, 'bounds_changed', 
+      _.debounce(
+        _.throttle(
+          _.bind(function(){
+            this.model.allTrucks.fetch({
+              success: _.bind(this.resetCollection, this)
+            });
+          }, this)), 250), 250, true);
   },
 
   resetCollection: function() {
