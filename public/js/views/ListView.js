@@ -3,9 +3,11 @@ var ListView = Backbone.View.extend({
   render: function() {
     console.log('rendering!!!')
     console.log(this.collection)
-    this.$el.children().detach();
-    //this.$el.html()
 
+    this.$el.empty();
+    $('#list-container').remove();
+    //this.$el.html()
+    //this.$el.append('<li></li>').text("Food Trucks Near You")
     this.$el.append(
         this.collection.map(function(truck){
           return new ListItemView({model: truck}).render();
