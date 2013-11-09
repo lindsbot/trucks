@@ -5,8 +5,6 @@ var TrucksView = Backbone.View.extend({
     this.collection.fetch();
   },
   render: function() {
-    var self = this;
-    console.log("rendering...", this.collection)
     var bounds = map.getBounds();
     _.each(this.collection.models, function(truck){
       var lat = truck.get('latitude');

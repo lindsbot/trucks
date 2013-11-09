@@ -1,12 +1,10 @@
 var ListView = Backbone.View.extend({
   tagName: 'ul',
   render: function() {
-    console.log('rendering!!!')
-    console.log(this.collection)
-
     this.$el.empty();
+
     $('#list-container').remove();
-    //this.$el.html()
+    
     this.$el.append(
         this.collection.map(function(truck){
           return new ListItemView({model: truck}).render();

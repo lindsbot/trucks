@@ -17,7 +17,6 @@ var AppView = Backbone.View.extend({
   },
 
   resetCollection: function() {
-    console.log("resetting")
     var bounds = map.getBounds();
     var updatedTrucks = _.filter(this.model.allTrucks.models, function(truck){
       var lat = truck.get('latitude');
@@ -26,7 +25,6 @@ var AppView = Backbone.View.extend({
       if (bounds.contains(latLng)) { return true; }
     });
     this.trucksView.collection.reset(updatedTrucks);
-    console.log(this.trucksView.collection)
     this.listView.render();
   }
 });
